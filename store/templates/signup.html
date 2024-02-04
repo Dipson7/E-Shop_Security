@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 mx-auto border rounded pt-5">
+                <h3 class="alert alert-light border rounded">Create an Account</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {% if error %}
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" name="fname" value="{{values.fname}}" required class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" name="lname" value="{{values.lname}}" required class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input type="text" name="phone" value="{{values.phone}}" placeholder="+91-" required class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="email" value="{{values.email}}" placeholder="name@gmail.com" required class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" name="password" required class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Register" class="btn btn-sm btn-info">
+                    </div>
+                    Already register user than click on <a href="{% url 'login' %}">login here</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
