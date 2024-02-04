@@ -1,4 +1,4 @@
-# E-Shop Web Application
+# E-Shop 
 
 ## Overview
 
